@@ -4,6 +4,10 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import { Disclosure } from '@headlessui/react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -42,6 +46,28 @@ export default function Home({ allPostsData }) {
           </li>
           ))}
         </ul>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <div className="flex flex-col space-y-12">
+            <Disclosure>
+              {({ open }) => (
+                <div className="flex flex-col space-y-2">
+                  <Disclosure.Button className="flex flex-row justify-between space-x-2 text-left">
+                    Test
+                    <FontAwesomeIcon
+                      size="lg"
+                      color="white"
+                      icon={solid('plus')}
+                      className={`${open ? 'rotate-180' : ''} transition-transform duration-300`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel>
+                    Reponse Test
+                  </Disclosure.Panel>
+                </div>
+              )}
+            </Disclosure>
+        </div>
       </section>
     </Layout>
   );
