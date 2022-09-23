@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 8010",
+    "prod": "pm2 start npm --name 'RECRUTEUR TJ LANDING' -- run start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
