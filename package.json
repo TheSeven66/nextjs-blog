@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8001",
+    "start": "next start -p 8012",
     "prod": "pm2 start npm --name 'Test Blog' -- run start"
   },
   "dependencies": {
